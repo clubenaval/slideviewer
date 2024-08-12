@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="{{ url_for('static', filename='images/icone.png') }}" alt="Logo" style="height: 42px;">
+    </a>
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('slideview') }}" target="_blank">Abrir Slideview</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('upload') }}">Upload de Banners</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="content mt-4">
+    <h2>Bem-vindo ao Slideview!</h2>
+    <p>Escolha uma opção acima.</p>
+</div>
+
+<footer class="footer mt-auto py-3">
+    <div class="container text-center">
+        <span class="text-muted">© 2024 Clube Naval</span>
+    </div>
+</footer>
+{% endblock %}

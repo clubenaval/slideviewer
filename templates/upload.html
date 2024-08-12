@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Upload de Banners</h2>
+
+<form method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="files">Selecione os arquivos:</label>
+        <input type="file" class="form-control-file" id="files" name="files[]" multiple>
+    </div>
+    <button type="submit" class="btn btn-primary">Upload</button>
+</form>
+
+<form action="{{ url_for('delete_images') }}" method="POST" class="mt-4">
+    <button type="submit" class="btn btn-danger"onclick="return confirm('Tem certeza que deseja apagar todos os banners?')">Apagar Todos os Banners</button>
+</form>
+
+{% endblock %}
