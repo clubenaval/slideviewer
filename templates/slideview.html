@@ -21,7 +21,7 @@
     </style>
 </head>
 <body>
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="8000">
         <ol class="carousel-indicators">
             {% for i in range(images|length) %}
             <li data-target="#carouselExampleIndicators" data-slide-to="{{ i }}" {% if i == 0 %}class="active"{% endif %}></li>
@@ -30,7 +30,7 @@
         <div class="carousel-inner">
             {% for image in images %}
             <div class="carousel-item {% if loop.index == 1 %}active{% endif %}">
-                <img src="{{ url_for('static', filename='uploads/' ~ image) }}" class="d-block w-100" alt="...">
+                <img src="{{ url_for('static', filename='uploads/' ~ image) }}" class="d-block w-100" alt="{{ image }}">
             </div>
             {% endfor %}
         </div>
